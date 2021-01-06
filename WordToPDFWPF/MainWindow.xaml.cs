@@ -61,7 +61,7 @@ namespace WordToPDFWPF
             }).Start();
         }
         private void showProcessBar(int maximum)
-        { 
+        {
             this.progressBarStack.Visibility = Visibility.Visible;
             this.progressBar.Maximum = pathList.Count;
             this.progressBar.Value = 0;
@@ -84,14 +84,18 @@ namespace WordToPDFWPF
 
                 }
             }
+            RefreshList();
+        }
+
+        private void RefreshList()
+        {
             this.fileList.Items.Refresh();
         }
 
         private void Clear_Button_Click(object sender, RoutedEventArgs e)
         {
             pathList.Clear();
-            this.fileList.Items.Refresh();
-
+            RefreshList();
         }
     }
 }
