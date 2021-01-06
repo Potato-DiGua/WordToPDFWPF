@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialDesignThemes.Wpf;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -27,7 +28,6 @@ namespace WordToPDFWPF
         {
             InitializeComponent();
             this.fileList.ItemsSource = pathList;
-            this.progressBarStack.Visibility = Visibility.Hidden;
         }
 
         private void Transform_Button_Click(object sender, RoutedEventArgs e)
@@ -47,7 +47,7 @@ namespace WordToPDFWPF
                     {
                         this.Dispatcher.Invoke(() =>
                         {
-                            MessageBox.Show(path + "  失败");
+                            MessageBox.Show(path + "  失败", "警告");
                         });
 
                     }
@@ -58,11 +58,17 @@ namespace WordToPDFWPF
                     });
                 };
 
+                Thread.Sleep(500);
+                this.Dispatcher.Invoke(() =>
+                {
+                    DialogHost.CloseDialogCommand.Execute(null, null);
+                });
+
             }).Start();
         }
         private void showProcessBar(int maximum)
         {
-            this.progressBarStack.Visibility = Visibility.Visible;
+            DialogHost.OpenDialogCommand.Execute(null, null);
             this.progressBar.Maximum = pathList.Count;
             this.progressBar.Value = 0;
             this.progressBarValue.Content = 0;

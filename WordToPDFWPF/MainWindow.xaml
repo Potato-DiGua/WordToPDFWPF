@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WordToPDFWPF"
         
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         Background="{DynamicResource MaterialDesignPaper}"
         TextElement.FontWeight="Medium"
@@ -15,22 +15,38 @@
         mc:Ignorable="d"
         Title="Word转PDF" Width="800" VerticalAlignment="Top" SizeToContent="Height"
          >
-    <StackPanel>
-        <Canvas Height="52">
-            <Label Content="Word文件列表(请拖拽word文件至此)" Canvas.Left="0" Canvas.Bottom="0" />
-            <Button Content="清空" Margin="0,10,20,10" Canvas.Right="0" Click="Clear_Button_Click" />
-        </Canvas>
-        <ListBox  Height="600" Width="800" Name="fileList"  AllowDrop="True" Drop="fileList_Drop" Background="#E6E6FA">
-        </ListBox>
-        
-        <Button Content="转换" Width="60" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Click="Transform_Button_Click"/>
-        <StackPanel Name="progressBarStack" VerticalAlignment="Center" Orientation="Horizontal" Margin="10,0,0,10" >
-            <Label Content="进度：" />
-            <ProgressBar Name="progressBar"  Height="15" Width="300" Margin="0,0,10,0" />
-            <Label Name="progressBarValue" Content="0" />
-            <Label Content="/" />
-            <Label Name="progressBarMax" Content="0" />
-        </StackPanel>
+    <md:DialogHost>
+        <md:DialogHost.DialogContent>
+            <StackPanel Name="progressBarStack" VerticalAlignment="Center" Orientation="Horizontal" Margin="20,20,20,20" >
+                <Label Content="进度：" />
+                <ProgressBar Name="progressBar"  Height="15" Width="300" Margin="0,0,10,0" />
+                <Label Name="progressBarValue" Content="0" />
+                <Label Content="/" />
+                <Label Name="progressBarMax" Content="0" />
+            </StackPanel>
 
-    </StackPanel>
+        </md:DialogHost.DialogContent>
+        <Grid>
+            <StackPanel>
+                <Canvas Height="52">
+                    <Label Content="Word文件列表(请拖拽word文件至此)" Canvas.Left="0" Canvas.Bottom="0" />
+                    <Button Content="清空" Margin="0,10,20,10" Canvas.Right="0" Click="Clear_Button_Click" />
+                </Canvas>
+                <ListBox  Height="600" Width="800" Name="fileList"  AllowDrop="True" Drop="fileList_Drop" Background="#E6E6FA">
+                </ListBox>
+
+                <Button 
+                    Content="转换" 
+                    Width="60" 
+                    HorizontalAlignment="Right" 
+                    Margin="0,10,20,10" 
+                    VerticalAlignment="Top"
+                    Click="Transform_Button_Click"
+                    />
+
+            </StackPanel>
+        </Grid>
+    </md:DialogHost>
+
+
 </Window>

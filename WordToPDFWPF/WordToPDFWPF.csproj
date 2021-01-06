@@ -7,7 +7,7 @@
     <ProjectGuid>{606F7A81-4119-497C-AC01-DA3EB698A4FD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>WordToPDFWPF</RootNamespace>
-    <AssemblyName>WordToPDFWPF</AssemblyName>
+    <AssemblyName>WordToPDFWPF-MaterialDesign</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -68,6 +68,7 @@
   <PropertyGroup>
     <StartupObject />
   </PropertyGroup>
+  <PropertyGroup />
   <PropertyGroup>
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
