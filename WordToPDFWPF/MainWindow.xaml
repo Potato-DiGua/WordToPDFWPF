@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WordToPDFWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Width="800" VerticalAlignment="Top" SizeToContent="Height">
+        Title="Word转PDF" Width="800" VerticalAlignment="Top" SizeToContent="Height">
     <StackPanel>
         <Button Content="清空" Width="40" Height="20" Margin="20,10,0,10" HorizontalAlignment="Left" Click="Clear_Button_Click"/>
         <ListBox Name="fileList" Height="600" Margin="0,0,0,20" AllowDrop="True" Drop="fileList_Drop">
