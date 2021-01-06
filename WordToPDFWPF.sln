@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordToPDFWPF", "WordToPDFWPF\WordToPDFWPF.csproj", "{606F7A81-4119-497C-AC01-DA3EB698A4FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{606F7A81-4119-497C-AC01-DA3EB698A4FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{606F7A81-4119-497C-AC01-DA3EB698A4FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{606F7A81-4119-497C-AC01-DA3EB698A4FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{606F7A81-4119-497C-AC01-DA3EB698A4FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5E211FAD-BB92-4E73-8A8F-E8C50DC6DC81}
+	EndGlobalSection
+EndGlobal
