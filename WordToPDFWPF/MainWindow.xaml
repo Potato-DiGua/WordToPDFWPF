@@ -7,11 +7,15 @@
         mc:Ignorable="d"
         Title="Word转PDF" Width="800" VerticalAlignment="Top" SizeToContent="Height">
     <StackPanel>
-        <Button Content="清空" Width="40" Height="20" Margin="20,10,0,10" HorizontalAlignment="Left" Click="Clear_Button_Click"/>
-        <ListBox Name="fileList" Height="600" Margin="0,0,0,20" AllowDrop="True" Drop="fileList_Drop">
+        <Canvas Height="40">
+            <Label Content="Word文件列表(将Word文件拖拽至列表)" Canvas.Bottom="0" Canvas.Left="0"/>
+            <Button Content="清空" Margin="0,10,10,10" HorizontalAlignment="Left" Click="Clear_Button_Click" Width="60" Height="20" Canvas.Right="0" Canvas.Top="0"/>
+        </Canvas>
+        
+        <ListBox Name="fileList" Height="600" Margin="0,0,0,20" AllowDrop="True" Drop="fileList_Drop" BorderThickness="1">
         </ListBox>
-        <Button Content="转换" Width="60" HorizontalAlignment="Right" Margin="0,0,60,0" Height="20" VerticalAlignment="Top" Click="Transform_Button_Click"/>
-        <StackPanel Name="progressBarStack" VerticalAlignment="Center" Orientation="Horizontal" Margin="10,0,0,0" >
+        <Button Content="转换" Width="60" HorizontalAlignment="Right" Margin="0,0,10,0" Height="20" VerticalAlignment="Top" Click="Transform_Button_Click"/>
+        <StackPanel Name="progressBarStack" VerticalAlignment="Center" Orientation="Horizontal" Margin="10,0,0,10" >
             <Label Content="进度：" />
             <ProgressBar Name="progressBar"  Height="15" Width="300" Margin="0,0,10,0"/>
             <Label Name="progressBarValue" Content="0" />

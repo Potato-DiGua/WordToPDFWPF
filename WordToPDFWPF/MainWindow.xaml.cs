@@ -28,6 +28,7 @@ namespace WordToPDFWPF
             InitializeComponent();
             this.fileList.ItemsSource = pathList;
             this.progressBarStack.Visibility = Visibility.Hidden;
+            
         }
 
         private void Transform_Button_Click(object sender, RoutedEventArgs e)
@@ -47,7 +48,7 @@ namespace WordToPDFWPF
                     {
                         this.Dispatcher.Invoke(() =>
                         {
-                            MessageBox.Show(path + "  失败");
+                            MessageBox.Show(path + "  失败", "警告");
                         });
 
                     }
@@ -57,6 +58,10 @@ namespace WordToPDFWPF
                         this.progressBarValue.Content = this.progressBar.Value;
                     });
                 };
+                this.Dispatcher.Invoke(() =>
+                {
+                    MessageBox.Show("转换完成！！！", "提示");
+                });
 
             }).Start();
         }
